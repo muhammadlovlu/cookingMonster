@@ -1,3 +1,10 @@
+// fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
+// .then (res => res.json())
+// .then (data => console.log(data))
+
+
+
+
 document.getElementById("search").addEventListener('click', function () {
     search()
 })
@@ -24,10 +31,8 @@ const showFoodItems = items => {
         `;
         Div.innerHTML = itemsAll;
         Result.appendChild(Div)
+        console.log(Div)
 
     })
 }
 
-fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
-.then (res => res.json())
-.then (data => console.log(data))
