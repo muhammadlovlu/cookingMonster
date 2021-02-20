@@ -27,11 +27,15 @@ span{
     border-radius: 10px 10px 0px 0px;
 }
 .box {
-    
     margin: 10px;
     background-color: cornsilk;
     border-radius: 10px;    
     box-shadow: 0 8px 6px -6px black;
+}
+.box :hover{
+    cursor:pointer;
+    color:red;
+    transform: scale(0.8);
 }
 .headline{
     font-size: 18px;
