@@ -1,6 +1,8 @@
 document.getElementById("search").addEventListener('click', function () {
-    let Result = document.getElementById("result");
+    const Result = document.getElementById("result");
     Result.innerHTML = "";
+    const ingredient = document.getElementById("ingredient");
+    ingredient.innerHTML = "";
     search()
         .catch(error => alert("Type First Letter Of Your Favourite Food !"))
 })
@@ -24,53 +26,33 @@ const showFoodItems = items => {
     items.forEach(item => {
         let Div = document.createElement("div");
         Div.className = 'box';
-        
-       
         const itemsAll = `
         <img class="image w-100" src="${item.strMealThumb}" />
-        <h2 class="headline">${item.strMeal}</h2>
-        `;
+        <h2 class="headline">${item.strMeal}</h2>`;
         Div.innerHTML = itemsAll;
         Result.appendChild(Div)
-
-        Div.onclick =function(){
+        Div.onclick = function () {
+            Result.innerHTML = "";
+            const ingredient = document.getElementById("ingredient");
+            let ingredientDiv = document.createElement("div");
+            ingredientDiv.className = "ingredientBox";
             const itemDetails = `
-            <img class="image w-100" src="${item.strMealThumb}" />
-        <h2 class="headline">${item.strMeal}</h2>
-        <p>${item.strIngredient1}</p>
-        <p>${item.strIngredient2}</p>
-        <p>${item.strIngredient3}</p>
-        <p>${item.strIngredient4}</p>
-        <p>${item.strIngredient5}</p>
-        <p>${item.strIngredient6}</p>
-        <p>${item.strIngredient7}</p>
-        <p>${item.strIngredient8}</p>
-        <p>${item.strIngredient9}</p>
-        <p>${item.strIngredient10}</p>
-        <p>${item.strIngredient11}</p>
-        <p>${item.strIngredient12}</p>
-        <p>${item.strIngredient13}</p>
-        <p>${item.strIngredient14}</p>
-        <p>${item.strIngredient15}</p>
+            <img class="image" src="${item.strMealThumb}" />
+            <h2 class="">${item.strMeal}</h2>
+            <h4 class="">Ingredients :</h4>
+            <li>${item.strIngredient1}</li>
+            <li>${item.strIngredient2}</li>
+            <li>${item.strIngredient3}</li>
+            <li>${item.strIngredient4}</li>
+            <li>${item.strIngredient5}</li>
+            <li>${item.strIngredient6}</li>
+            <li>${item.strIngredient7}</li>
+            <li>${item.strIngredient8}</li>
+            <li>${item.strIngredient9}</li>
+            <li>${item.strIngredient10}</li>
             `;
-            console.log(itemDetails)
+            ingredientDiv.innerHTML = itemDetails;
+            ingredient.appendChild(ingredientDiv);
         };
-
-        
-
-
-
-
-
     })
-   
 }
-
-
-function moreDetails (){
-    fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
-    .then (res => res.json())
-    .then (data => console.log(data))
-    
-}
-moreDetails ()
