@@ -17,13 +17,13 @@
 
 <body>
     <!-- Header Section Start -->
-    <div class="container">
+    <div id="full-box" class="container">
         <div class="row">
             <div class="col">
                 <nav class="navbar navbar-expand-lg navbar-light ">
                     <div class="container-fluid">
                         <a class="navbar-brand" href="#">
-                            <h1>Cooking Monster</h1>
+                            <h1 class="brand">Cooking Monster</h1>
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                             data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -53,26 +53,31 @@
                 </nav>
             </div>
         </div>
-        <!-- Header Section end   -->
 
         <!--Search Bar Tag Start-->
         <div class="row mt-5">
             <div class="col">
                 <div class="col-lg-12 d-flex justify-content-center">
                     <div class="d-flex w-50">
-                        <input id="input-Text" class="form-control me-2" type="search" placeholder="Type Your Food Name"
-                            aria-label="Search">
-                        <button id="search" class="btn btn-outline-success" method="GET">Search</button>
+                        <input id="input-Text" class="form-control me-2" type="search"
+                            placeholder="Type With A Letter Of Your Favourite Food !" aria-label="Search">
+                        <button id="search" class="btn btn-outline-success">Search</button>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
+        <!-- Welcoming Section -->
+        <section id="welcome" class="container">
+            <div class="row d-flex justify-content-center ">
+                <div id="welcoming" class=" ">
+                    <h2>Welcome To <span class="brand">Cooking Monster</span></h2>
+                    <p>Find Your Favourite Recipe's Here</p>
+                </div>
+            </div>
+        </section>
 
         <!-- search result output -->
-        <div id="result" class="mt-5">
+        <div id="result" class=" mt-5">
 
         </div>
 
