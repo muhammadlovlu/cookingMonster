@@ -7,23 +7,25 @@ async function search() {
     const api = `https://www.themealdb.com/api/json/v1/1/search.php?f=${inputValue}`
     const res = await fetch(api)
     const data = await res.json()
- console.log(data.meals)
-//   showFoodItems(data)
+  
+    showFoodItems(data.meals)
+
 }
 
 
+const showFoodItems = items => {
+    const Result = document.getElementById("result");
+    items.forEach(item => {
+        const createDiv = document.createElement("div");
+        const itemsAll =`
+        <h2>${item.strMeal}</h2>
+        `;
+        createDiv.innerHTML = itemsAll;
+ Result.appendChild(createDiv)
 
+    })
+}
 
-
-// const showFoodItems = items => {
-//     const Result = document.getElementById("result");
-//     items.forEach(item => {
-//         const createDiv = document.createElement("div");
-//         const itemsAll =`
-//         <h1>${item}</h1>
-//         `;
-//         createDiv.innerHTML = itemsAll;
-//  Result.appendChild(createDiv)
-
-//     })
-// }
+// fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
+// .then (res => res.json())
+// .then (data => console.log(data))
