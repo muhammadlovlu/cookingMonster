@@ -10,11 +10,6 @@ font-family: 'Teko', sans-serif; */
     margin : 0;
     padding: 0;
 }
-
-.container{
-    background-color: #eec745;
-}
-
 h1{
   
     font-family: 'Teko', sans-serif;
@@ -23,6 +18,28 @@ li a{
     font-family: 'Oswald', sans-serif;
   font-size: 20px;
 }
+.container{
+    background-color: #eec745;
+}
+.image {
+    border-radius: 10px 10px 0px 0px;
+}
+.box {
+    
+    margin: 10px;
+    background-color: cornsilk;
+    border-radius: 10px;    
+    box-shadow: 0 8px 6px -6px black;
+}
+.headline{
+    font-size: 18px;
+    text-align: center;
+}
+#result{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
 #search {
     background-color:#9745e4;
     font-family: 'Audiowide', cursive;
@@ -30,10 +47,5 @@ li a{
     font-size:18px;
     letter-spacing:1.5px;
 }
-.box {
-      
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-gap: 40px;
-    
-}
+
+
