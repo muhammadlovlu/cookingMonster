@@ -1,7 +1,3 @@
-// fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
-// .then (res => res.json())
-// .then (data => console.log(data))
-
 document.getElementById("search").addEventListener('click', function () {
     let Result = document.getElementById("result");
     Result.innerHTML = "";
@@ -26,14 +22,55 @@ const showFoodItems = items => {
     fullBox.style.minHeight = "937px";
     Result = document.getElementById("result");
     items.forEach(item => {
-        const Div = document.createElement("div");
+        let Div = document.createElement("div");
         Div.className = 'box';
+        
+       
         const itemsAll = `
         <img class="image w-100" src="${item.strMealThumb}" />
         <h2 class="headline">${item.strMeal}</h2>
         `;
         Div.innerHTML = itemsAll;
         Result.appendChild(Div)
+
+        Div.onclick =function(){
+            const itemDetails = `
+            <img class="image w-100" src="${item.strMealThumb}" />
+        <h2 class="headline">${item.strMeal}</h2>
+        <p>${item.strIngredient1}</p>
+        <p>${item.strIngredient2}</p>
+        <p>${item.strIngredient3}</p>
+        <p>${item.strIngredient4}</p>
+        <p>${item.strIngredient5}</p>
+        <p>${item.strIngredient6}</p>
+        <p>${item.strIngredient7}</p>
+        <p>${item.strIngredient8}</p>
+        <p>${item.strIngredient9}</p>
+        <p>${item.strIngredient10}</p>
+        <p>${item.strIngredient11}</p>
+        <p>${item.strIngredient12}</p>
+        <p>${item.strIngredient13}</p>
+        <p>${item.strIngredient14}</p>
+        <p>${item.strIngredient15}</p>
+            `;
+            console.log(itemDetails)
+        };
+
+        
+
+
+
+
+
     })
+   
 }
 
+
+function moreDetails (){
+    fetch("https://www.themealdb.com/api/json/v1/1/search.php?f=a")
+    .then (res => res.json())
+    .then (data => console.log(data))
+    
+}
+moreDetails ()
