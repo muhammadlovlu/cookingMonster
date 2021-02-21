@@ -16,9 +16,10 @@ li a{
 span{
     display: block;
 }
+/* Class Part */
 .container{
     background-color: #eec745;
-    min-height: 718px ;
+    min-height: 386px ;
 }
 .brand {
     font-family: 'Teko', sans-serif;
@@ -44,15 +45,32 @@ span{
     text-align: center;
 }
 .ingredientBox{
-    background-color: blanchedalmond;
-    width: 50%;
-    height:100%;
+    margin-top: -140px;
+    transform: scale(0.7);
+    width: 100%;
+    letter-spacing: 0.5px;
+    background-color: cornsilk;
     border-radius: 10px;    
-    box-shadow: 0 8px 6px -6px black;
-  
+    box-shadow: 0 8px 6px -6px black; 
+    padding-bottom: 30px;
 }
+.ingredientBox h2 {
+    font-family: 'Bebas Neue', cursive;  
+}
+.ingredientBox h4{
+    font-family: 'Audiowide', cursive;
+}
+.ingredientBox li {
+    list-style-type: none;
+    margin-left: 20px;
+    font-family: 'Oswald', sans-serif;
 
+}
+.ingredientBox li::first-letter{
+   text-transform: capitalize;
 
+}
+/* ID part */
 #welcoming h2{
     font-family: 'Audiowide', cursive;
     font-size: 50px;
@@ -66,7 +84,8 @@ span{
 }
 #result{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+
 }
 #search {
     background-color:#9745e4;
@@ -75,3 +94,26 @@ span{
     font-size:18px;
     letter-spacing:1.5px;
 }
+/* Media Query Part */
+ @media only screen and (min-width: 992px) {
+    .ingredientBox{
+        margin-top: 10px;
+        transform: scale(1.0);
+        width: 30%;
+        background-color: cornsilk;
+        border-radius: 10px;    
+        box-shadow: 0 8px 6px -6px black; 
+
+    }
+    #welcoming{
+        padding-top: 0px;
+    }
+    .container{
+        background-color: #eec745;
+        min-height: 702px ;
+    }
+    #result{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+ }

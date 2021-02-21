@@ -1,5 +1,5 @@
 document.getElementById("search").addEventListener('click', function () {
-    const Result = document.getElementById("result");
+    let Result = document.getElementById("result");
     Result.innerHTML = "";
     const ingredient = document.getElementById("ingredient");
     ingredient.innerHTML = "";
@@ -32,14 +32,16 @@ const showFoodItems = items => {
         Div.innerHTML = itemsAll;
         Result.appendChild(Div)
         Div.onclick = function () {
+            const searchBar = document.getElementById("search-bar");
+            searchBar.style.display = "none";
             Result.innerHTML = "";
             const ingredient = document.getElementById("ingredient");
             let ingredientDiv = document.createElement("div");
             ingredientDiv.className = "ingredientBox";
             const itemDetails = `
-            <img class="image" src="${item.strMealThumb}" />
-            <h2 class="">${item.strMeal}</h2>
-            <h4 class="">Ingredients :</h4>
+            <img class="image w-100" src="${item.strMealThumb}" />
+            <h2 class="ms-3">${item.strMeal}</h2>
+            <h4 class="ms-3">Ingredients :</h4>
             <li>${item.strIngredient1}</li>
             <li>${item.strIngredient2}</li>
             <li>${item.strIngredient3}</li>
@@ -49,7 +51,6 @@ const showFoodItems = items => {
             <li>${item.strIngredient7}</li>
             <li>${item.strIngredient8}</li>
             <li>${item.strIngredient9}</li>
-            <li>${item.strIngredient10}</li>
             `;
             ingredientDiv.innerHTML = itemDetails;
             ingredient.appendChild(ingredientDiv);
